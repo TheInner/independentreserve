@@ -432,11 +432,12 @@ IndependentReserve.prototype.synchDigitalCurrencyDepositAddressWithBlockchain = 
     });
 };
 
-IndependentReserve.prototype.withdrawDigitalCurrency = function WithdrawDigitalCurrency(amount, withdrawalAddress, comment, primaryCurrencyCode, callback)
+IndependentReserve.prototype.withdrawDigitalCurrency = function WithdrawDigitalCurrency(amount, withdrawalAddress, destinationTag, comment, primaryCurrencyCode, callback)
 {
     this.postRequest('WithdrawDigitalCurrency', callback, {
         amount: amount,
         withdrawalAddress: withdrawalAddress,
+        destinationTag : destinationTag,
         comment: comment,
         primaryCurrencyCode: primaryCurrencyCode
     });
